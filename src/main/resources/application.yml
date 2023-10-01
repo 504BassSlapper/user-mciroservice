@@ -19,3 +19,9 @@ spring:
     properties:
       hibernate:
         globally_quoted_identifiers: true
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
