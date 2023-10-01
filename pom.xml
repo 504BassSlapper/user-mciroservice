@@ -89,6 +89,7 @@
 
 
     <build>
+        <finalName>user-microservice</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -1,0 +1,14 @@
+version: "3.0"
+
+services:
+  user-microservice:
+    container_name: user-microservice
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+  db_server:
+    container_name: postgres
+    image: postgres
+    ports:
+      - "5321:5321"
