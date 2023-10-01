@@ -1,5 +1,10 @@
 server:
-  port: 8083
+  port: 8080
+
+management:
+  server:
+    port: 8090
+
 spring:
   application:
     name: prod-user-microservice
