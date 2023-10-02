@@ -1,14 +1,31 @@
 version: "3.0"
 
 services:
-  user-microservice:
-    container_name: user-microservice
+  user_microservice:
+    container_name: user_microservice
     build:
       context: .
     ports:
-      - "8080:8080"
+      - "8080:8082"
+      # management port
+      - "8090:8090"
+    depends_on:
+      - mvn_user_microservice
+
+  mvn_user_microservice:
+    container_name: mvn_user_microservice
+    image: maven:3-amazoncorretto-21-al2023
+    working_dir: /app
+    command: ["mvn", "clean", "install"]
+    volumes:
+      - .:/app
+
   db_server:
     container_name: postgres
     image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - /data:/data
     ports:
       - "5321:5321"
