@@ -1,10 +1,21 @@
 server:
-  port: 8082
+  port: 8080
 
 management:
   server:
     port: 8090
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    actuator:
+      enabled: true
+    security:
+      enabled: false
 
+  endpoint:
+    restart:
+      enabled: true
 spring:
   application:
     name: dev-user-microservice
