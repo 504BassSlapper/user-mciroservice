@@ -50,10 +50,11 @@
             <version>3.1.4</version>
         </dependency>
 
-        <!-- H2 Database -->
+        <!-- For H2 (Development) -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -70,6 +71,12 @@
             <version>3.1.4</version>
         </dependency>
 
+        <!-- For PostgreSQL (Production) -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
     <profiles>

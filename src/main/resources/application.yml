@@ -1,22 +1,12 @@
-server:
-  port: 8080
 
-management:
-  server:
-    port: 8090
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-    actuator:
-      enabled: true
-    security:
-      enabled: false
 
-  endpoint:
-    restart:
-      enabled: true
 spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
   application:
     name: dev-user-microservice
   config:
@@ -34,7 +24,6 @@ spring:
     properties:
       hibernate:
         globally_quoted_identifiers: true
-
 logging:
   level:
     org:
